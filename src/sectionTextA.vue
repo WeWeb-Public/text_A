@@ -6,18 +6,20 @@
 
         <wwObject class="background" v-bind:ww-object="section.data.background" ww-category="background"></wwObject>
 
-        <div class="section-padding">
-            <div class="row">
-                <div class="block col-xs-12 col-md-8 col-md-offset-2">
-                    <h1 class="section-title"><wwObject v-bind:ww-object="section.data.title"></wwObject></h1>
+        <div class="container">
+            <div class="section-padding">
+                <div class="row">
+                        <div class="block">
+                        <h1 class="section-title"><wwObject v-bind:ww-object="section.data.title"></wwObject></h1>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="block col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 content">
-                    <wwObject v-bind:ww-object="section.data.subtitle1"></wwObject>
-                    <wwObject v-bind:ww-object="section.data.subtitle2"></wwObject>
-                    <wwObject v-bind:ww-object="section.data.text"></wwObject>
+                <div class="row">
+                        <div class="block content">
+                        <wwObject v-bind:ww-object="section.data.subtitle1"></wwObject>
+                        <wwObject v-bind:ww-object="section.data.subtitle2"></wwObject>
+                        <wwObject v-bind:ww-object="section.data.text"></wwObject>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +43,6 @@ export default {
     },
     created() {
         this.section.data = this.section.data || {}
-        this.section.data = {"text":{"data":{"popup":null},"font":"","link":"","size":"text-xsmall","text":{"fr_FR":"<i>- The text can also be on the right, or the left, or justified.<br>Enjoy !</i>"},"type":"text","zoom":-1,"align":"right","class":["ww-animspeed-normal","ww-anim-fade-left-bounce"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.9201229669418407},"isNew":false,"title":{"data":{"popup":null},"font":"","link":"","size":"text-big","text":{"fr_FR":"<b>Share Your Story</b>"},"type":"text","zoom":-1,"align":"","class":["ww-anim-fade-top-bounce","ww-animspeed-normal"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.3394403902960288},"subtitle1":{"data":{"popup":null},"font":"sans-serif","link":"","size":"text-small","text":{"fr_FR":"<div><br></div>You have unlimited possibilities to share your story with this text section.<div><br></div>"},"type":"text","zoom":-1,"align":"center","class":["ww-anim-fade","ww-animspeed-slow"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.5228544719519588},"subtitle2":{"data":{"popup":null},"font":"sans-serif","link":"","size":"text-small","text":{"fr_FR":"<br>You can do it with a centered text, with various sizes and length.<br>You can also draw lines of various sizes, check this out :<div>Use animations for a stunning effect!</div><div><br></div>"},"type":"text","zoom":-1,"align":"center","class":["ww-anim-fade","ww-animspeed-slow"],"image":"/img/no_image_selected.png","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.28917835414897386},"textStyle":{"size":"text-xsmall","align":"right"},"background":{"data":{"popup":null},"font":"","link":null,"size":"","text":{"fr_FR":""},"type":"text","zoom":-1,"align":"","class":[],"image":"#FFFFFF","ratio":-1,"colors":{"color":"","borderColor":"","backgroundColor":""},"hidden":false,"position":{"x":0,"y":0},"uniqueId":0.6051758181869429},"titleStyle":{"size":"text-big","align":"center"},"sectionTitle":"Text1","subtitle1Style":{"size":"text-medium","align":"center"},"subtitle2Style":{"size":"text-small","align":"center"}};
 
         if (!this.section.data.background)
             this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color' });
