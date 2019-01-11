@@ -15,7 +15,7 @@
                 </div>
 
                 <div class="row">
-                        <div class="block content">
+                    <div class="block content">
                         <wwObject v-bind:ww-object="section.data.subtitle1"></wwObject>
                         <wwObject v-bind:ww-object="section.data.subtitle2"></wwObject>
                         <wwObject v-bind:ww-object="section.data.text"></wwObject>
@@ -44,21 +44,21 @@ export default {
     created() {
         this.section.data = this.section.data || {}
 
-        if (!this.section.data.background)
+        if (!this.section.data.background) {
             this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color' });
-        
-        if (!this.section.data.title)
+        }
+        if (!this.section.data.title) {
             this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text' });
-        
-        if (!this.section.data.subtitle1)
+        }
+        if (!this.section.data.subtitle1) {
             this.section.data.subtitle1 = wwLib.wwObject.getDefault({ type: 'ww-text' });
-        
-        if (!this.section.data.subtitle2)
+        }
+        if (!this.section.data.subtitle2) {
             this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text' });
-        
-        if (!this.section.data.text)
+        }
+        if (!this.section.data.text) {
             this.section.data.text = wwLib.wwObject.getDefault({ type: 'ww-text' });
-
+        }
         this.sectionCtrl.update(this.section);
     },
     methods: {}
@@ -81,6 +81,10 @@ export default {
 
 .text_A .section-padding {
     padding: 30px 15px
+}
+
+.text_A .section-title {
+    text-align: center;
 }
 
 .text_A .row {
