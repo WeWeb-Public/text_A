@@ -9,7 +9,7 @@
         <div class="container">
             <div class="section-padding">
                 <div class="row">
-                        <div class="block">
+                    <div class="block">
                         <h1 class="section-title"><wwObject v-bind:ww-object="section.data.title"></wwObject></h1>
                     </div>
                 </div>
@@ -43,21 +43,26 @@ export default {
     },
     created() {
         this.section.data = this.section.data || {}
-
+        
         if (!this.section.data.background) {
-            this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color' });
+            this.section.data.background = wwLib.wwObject.getDefault({ 
+                type: 'ww-image', 
+                data: {
+                    url: 'http://cdn.wewebapp.io/public/images/weweb-wp.png'
+                } 
+            });
         }
         if (!this.section.data.title) {
-            this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.title = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
         }
         if (!this.section.data.subtitle1) {
-            this.section.data.subtitle1 = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.subtitle1 = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
         }
         if (!this.section.data.subtitle2) {
-            this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.subtitle2 = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
         }
         if (!this.section.data.text) {
-            this.section.data.text = wwLib.wwObject.getDefault({ type: 'ww-text' });
+            this.section.data.text = wwLib.wwObject.getDefault({ type: 'ww-text', data: { color: 'white' } });
         }
         this.sectionCtrl.update(this.section);
     },
@@ -121,6 +126,12 @@ export default {
         padding: 50px 30px
     }
     .text_A .block {
+        -ms-flex: 0 0 66.666666%;
+        flex: 0 0 66.666666%;
+        max-width: 66.666666%;
+        margin-left: 16.666666%;
+    }
+    .text_A .block.content {
         -ms-flex: 0 0 66.666666%;
         flex: 0 0 66.666666%;
         max-width: 66.666666%;
